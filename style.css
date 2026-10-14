@@ -1,0 +1,98 @@
+* { box-sizing: border-box; }
+:root {
+  color-scheme: light;
+  --ink: #173b34;
+  --body: #354a44;
+  --muted: #64766f;
+  --accent: #146850;
+  --accent-soft: #e7f4ed;
+  --border: #dae6df;
+  --paper: #ffffff;
+  --background: #f5f8f5;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--background); color: var(--body); font-family: system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 16px; line-height: 1.85; overflow-wrap: anywhere; }
+a { color: var(--accent); text-underline-offset: .18em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, [tabindex]:focus-visible { outline: 3px solid #d29739; outline-offset: 4px; border-radius: 3px; }
+h1, h2, h3, strong { color: var(--ink); }
+h1 { margin: .25rem 0 1rem; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.03em; line-height: 1.3; }
+h2 { margin: 0 0 .8rem; font-size: 1.3rem; line-height: 1.55; }
+h3 { margin: 0 0 .45rem; font-size: 1.08rem; line-height: 1.6; }
+p { margin: .7rem 0; }
+ul { padding-left: 1.5rem; margin: .65rem 0 0; }
+li { margin: .5rem 0; padding-left: .1rem; }
+code { border: 1px solid var(--border); border-radius: 5px; padding: .12rem .3rem; background: #f1f5f2; font-size: .9em; word-break: break-word; }
+.skip-link { position: absolute; top: 8px; left: 16px; z-index: 5; transform: translateY(-150%); background: white; padding: 8px 16px; border: 1px solid var(--accent); }
+.skip-link:focus { transform: translateY(0); }
+.site-header { background: var(--paper); border-bottom: 1px solid var(--border); }
+.header-inner { max-width: 1120px; margin: 0 auto; padding: 24px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; text-decoration: none; color: var(--ink); font-size: 18px; font-weight: 750; line-height: 1.4; }
+.brand small { display: block; color: var(--muted); font-size: 11px; font-weight: 500; letter-spacing: .04em; margin-top: 3px; }
+.brand-mark { display: grid; place-items: center; width: 42px; height: 42px; background: #d1ebde; border: 1px solid #b9dacb; border-radius: 12px; font-size: 23px; }
+nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 4px; font-size: 14px; line-height: 1.5; }
+nav a { padding: 9px 11px; text-decoration: none; border-radius: 7px; color: var(--body); }
+nav a:hover { background: #f0f6f2; }
+nav a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+.container { max-width: 920px; margin: 0 auto; padding: 46px 32px 64px; }
+.page-heading { margin-bottom: 28px; }
+.eyebrow, .card-label { margin: 0; color: var(--accent); letter-spacing: .04em; font-size: 12px; font-weight: 700; }
+.page-description { color: var(--muted); font-size: 17px; }
+.document-meta { margin-top: 16px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.notice { border: 1px solid #c5ded0; border-left: 4px solid #387f63; background: #edf6ef; padding: 24px 26px; border-radius: 10px; margin-bottom: 26px; }
+.notice h2 { font-size: 1.15rem; }
+.notice p:last-child { margin-bottom: 0; }
+.paper { background: var(--paper); border: 1px solid var(--border); border-radius: 12px; padding: 34px; margin-top: 26px; }
+.paper section + section { margin-top: 32px; padding-top: 28px; border-top: 1px solid #e7eee9; }
+.paper section:first-child p:last-child { margin-bottom: 0; }
+.data-item { padding-top: 14px; }
+.data-item + .data-item { margin-top: 14px; }
+.inline-note { border-left: 3px solid #c0d6ca; background: #f4f8f4; padding: 14px 18px; margin-top: 18px; }
+.document-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 18px; margin: 28px 0; }
+.document-card { display: flex; flex-direction: column; background: white; border: 1px solid var(--border); border-radius: 12px; padding: 26px; text-decoration: none; color: var(--body); transition: border-color .15s ease, background .15s ease; }
+.document-card:hover { border-color: #83b29c; background: #fcfefd; }
+.document-card h2 { margin: 11px 0 4px; }
+.document-card p { margin: 7px 0 18px; color: var(--muted); font-size: 15px; line-height: 1.75; }
+.card-action { color: var(--accent); font-size: 14px; font-weight: 700; margin-top: auto; }
+.card-action span { margin-left: 4px; }
+.sdk-card h2 { margin-top: 8px; font-size: 1.65rem; }
+.detail-list { margin: 18px 0 0; }
+.detail-list div { display: grid; grid-template-columns: 112px minmax(0,1fr); gap: 18px; padding: 14px 0; border-top: 1px solid #e7eee9; }
+dt { color: var(--ink); font-weight: 700; }
+dd { margin: 0; }
+.external-label { font-size: 13px; }
+.sources { font-size: 14px; }
+.sources h2 { font-size: 1.05rem; }
+.site-footer { border-top: 1px solid var(--border); background: #edf3ee; }
+.footer-inner { max-width: 920px; margin: 0 auto; padding: 26px 32px 32px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.footer-inner p { margin: 7px 0 13px; }
+@media (max-width: 760px) {
+  .header-inner { padding: 18px 20px 14px; flex-direction: column; align-items: flex-start; gap: 16px; }
+  nav { width: 100%; justify-content: flex-start; gap: 3px; font-size: 13px; }
+  nav a { padding: 8px 9px; }
+  .container { padding: 30px 20px 44px; }
+  .paper { padding: 25px 22px; }
+  .notice { padding: 20px; }
+  .document-meta span { display: block; }
+  .detail-list div { grid-template-columns: 1fr; gap: 3px; }
+  .footer-inner { padding: 24px 20px; }
+}
+@media (max-width: 520px) {
+  body { font-size: 15px; }
+  .document-grid { grid-template-columns: 1fr; gap: 14px; }
+  .document-card { padding: 23px; }
+  .paper { padding: 24px 19px; }
+  h2 { font-size: 1.2rem; }
+  h3 { font-size: 1.03rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .document-card { transition: none; } }
+@media print {
+  body { background: white; color: black; font-size: 11pt; }
+  .site-header, .skip-link { display: none; }
+  .container { max-width: none; padding: 0; }
+  .paper, .notice { border: 0; padding: 0; }
+  .document-card { break-inside: avoid; }
+  .site-footer { background: white; }
+  h2, h3 { break-after: avoid; }
+}
+
